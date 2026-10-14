@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dental Clinic</title>
+  <meta name="description" content="" />
+  <meta name="theme-color" content="#0f8b8d" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo" data-logo></a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#services" data-i18n="nav.services"></a>
+        <a href="#about" data-i18n="nav.about"></a>
+        <a href="#doctors" data-i18n="nav.doctors"></a>
+        <a href="#reviews" data-i18n="nav.reviews"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang" data-lang-switch></div>
+        <a class="header__phone" data-phone-link><span data-phone></span></a>
+        <a href="#book" class="btn btn--primary btn--sm hide-sm" data-i18n="cta.book"></a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge"><span class="badge__dot"></span><span data-i18n="hero.badge"></span></span>
+          <h1 class="hero__title" data-c="hero.title" data-html></h1>
+          <p class="hero__subtitle" data-c="hero.subtitle"></p>
+          <div class="hero__ctas">
+            <a href="#book" class="btn btn--primary btn--lg" data-i18n="cta.book"></a>
+            <a class="btn btn--wa btn--lg" data-wa-link target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+              <span data-i18n="cta.whatsapp"></span>
+            </a>
+          </div>
+          <ul class="stats" data-stats></ul>
+        </div>
+        <div class="hero__visual" data-hero-visual></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section__head">
+          <span class="kicker" data-i18n="services.kicker"></span>
+          <h2 data-i18n="services.title"></h2>
+        </header>
+        <div class="services" data-services></div>
+        <p class="note" data-i18n="services.note"></p>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="section section--tint" id="about">
+      <div class="container">
+        <header class="section__head">
+          <span class="kicker" data-i18n="about.kicker"></span>
+          <h2 data-i18n="about.title"></h2>
+        </header>
+        <div class="features" data-features></div>
+      </div>
+    </section>
+
+    <!-- Doctors -->
+    <section class="section" id="doctors">
+      <div class="container">
+        <header class="section__head">
+          <span class="kicker" data-i18n="doctors.kicker"></span>
+          <h2 data-i18n="doctors.title"></h2>
+        </header>
+        <div class="doctors" data-doctors></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section--tint" id="reviews">
+      <div class="container">
+        <header class="section__head">
+          <span class="kicker" data-i18n="reviews.kicker"></span>
+          <h2 data-i18n="reviews.title"></h2>
+        </header>
+        <div class="reviews" data-reviews></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <header class="section__head">
+          <span class="kicker" data-i18n="faq.kicker"></span>
+          <h2 data-i18n="faq.title"></h2>
+        </header>
+        <div class="faq" data-faq></div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="section section--dark" id="book">
+      <div class="container book">
+        <div class="book__intro">
+          <span class="kicker kicker--light" data-i18n="book.kicker"></span>
+          <h2 data-i18n="book.title"></h2>
+          <p data-i18n="book.text"></p>
+          <div class="book__alt">
+            <a class="btn btn--light" data-phone-link>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+              <span data-phone></span>
+            </a>
+          </div>
+        </div>
+        <form class="form" id="bookForm" novalidate>
+          <label class="field">
+            <span data-i18n="form.name"></span>
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label class="field">
+            <span data-i18n="form.phone"></span>
+            <input name="phone" type="tel" autocomplete="tel" placeholder="+994 __ ___ __ __" required />
+          </label>
+          <label class="field">
+            <span data-i18n="form.service"></span>
+            <select name="service" data-service-select></select>
+          </label>
+          <label class="field">
+            <span data-i18n="form.date"></span>
+            <input name="date" type="date" />
+          </label>
+          <label class="field field--full">
+            <span data-i18n="form.message"></span>
+            <textarea name="message" rows="3"></textarea>
+          </label>
+          <p class="form__error" id="formError" role="alert" hidden data-i18n="form.error"></p>
+          <button type="submit" class="btn btn--wa btn--lg field--full">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+            <span data-i18n="form.submit"></span>
+          </button>
+          <p class="form__privacy field--full" data-i18n="form.privacy"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section__head">
+          <span class="kicker" data-i18n="contact.kicker"></span>
+          <h2 data-i18n="contact.title"></h2>
+        </header>
+        <div class="contact">
+          <div class="contact__info">
+            <div class="contact__block">
+              <h3 data-i18n="contact.address"></h3>
+              <p data-c="address"></p>
+              <p class="muted" data-c="landmark"></p>
+              <a class="link" data-map-link target="_blank" rel="noopener" data-i18n="contact.route"></a>
+            </div>
+            <div class="contact__block">
+              <h3 data-i18n="contact.hours"></h3>
+              <dl class="hours" data-hours></dl>
+            </div>
+            <div class="contact__block">
+              <h3 data-i18n="nav.contact"></h3>
+              <p><a class="link" data-phone-link><span data-phone></span></a></p>
+              <p><a class="link" data-email-link></a></p>
+              <div class="socials" data-socials></div>
+            </div>
+          </div>
+          <div class="contact__map">
+            <iframe data-map title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="logo logo--light" data-logo></a>
+      <p>© <span data-year></span> <span data-name></span>. <span data-i18n="footer.rights"></span></p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp + mobile call bar -->
+  <a class="wa-float" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+  <div class="mobile-bar">
+    <a class="btn btn--light" data-phone-link>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+      <span data-i18n="cta.call"></span>
+    </a>
+    <a href="#book" class="btn btn--primary" data-i18n="cta.book"></a>
+  </div>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  </svg>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
